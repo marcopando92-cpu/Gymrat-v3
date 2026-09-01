@@ -1,0 +1,18 @@
+const MUSCLES=['Petto','Dorsali','Schiena','Deltoide anteriore','Deltoide laterale','Deltoide posteriore','Bicipiti','Tricipiti','Quadricipiti','Femorali','Glutei','Polpacci','Addome'];
+const PRIORITIES=['Alta','Normale','Bassa'];
+const DEFAULT_EXERCISES=[
+['ex1','Panca inclinata','Petto',['Tricipiti','Deltoide anteriore'],'Bilanciere','Spinta',8,12],['ex2','Chest press','Petto',['Tricipiti','Deltoide anteriore'],'Macchina','Spinta',8,12],['ex3','Croci ai cavi','Petto',[],'Cavi','Isolamento',10,15],['ex4','Shoulder press','Deltoide anteriore',['Deltoide laterale','Tricipiti'],'Macchina','Spinta',8,12],['ex5','Alzate laterali','Deltoide laterale',[],'Manubri/Cavi','Isolamento',10,15],['ex6','Pushdown','Tricipiti',[],'Cavo','Isolamento',8,15],['ex7','Estensione tricipiti sopra testa','Tricipiti',[],'Cavo/Manubrio','Isolamento',10,15],
+['ex8','Lat machine','Dorsali',['Bicipiti'],'Macchina','Tirata verticale',8,12],['ex9','Rematore','Schiena',['Dorsali','Bicipiti'],'Macchina/Manubrio','Tirata orizzontale',8,12],['ex10','Pulley','Schiena',['Dorsali','Bicipiti'],'Cavo','Tirata orizzontale',8,12],['ex11','Lat machine presa stretta','Dorsali',['Bicipiti'],'Macchina','Tirata verticale',8,12],['ex12','Reverse fly','Deltoide posteriore',['Schiena'],'Macchina/Cavi','Isolamento',10,15],['ex13','Curl manubri','Bicipiti',[],'Manubri','Isolamento',8,12],['ex14','Curl inclinato','Bicipiti',[],'Manubri','Isolamento',10,15],
+['ex15','Leg press','Quadricipiti',['Glutei'],'Macchina','Squat/Pressa',8,12],['ex16','Leg extension','Quadricipiti',[],'Macchina','Isolamento',10,15],['ex17','Romanian deadlift','Femorali',['Glutei'],'Bilanciere/Manubri','Hip hinge',8,12],['ex18','Leg curl','Femorali',[],'Macchina','Isolamento',10,15],['ex19','Hip thrust','Glutei',['Femorali'],'Macchina/Bilanciere','Hip extension',8,12],['ex20','Calf raise','Polpacci',[],'Macchina','Isolamento',10,15],['ex21','Crunch ai cavi','Addome',[],'Cavo','Flessione',10,15]
+];
+const DEFAULT_SESSIONS=[
+{id:'push',name:'PUSH',type:'PPL',color:'red',exercises:[['ex1',3,8,12,2.5],['ex2',3,8,12,2.5],['ex3',2,10,15,1.25],['ex4',3,8,12,2.5],['ex5',3,10,15,1],['ex6',3,8,15,1.25],['ex7',2,10,15,1.25]]},
+{id:'pull',name:'PULL',type:'PPL',color:'blue',exercises:[['ex8',3,8,12,2.5],['ex9',3,8,12,2.5],['ex10',3,8,12,2.5],['ex11',2,8,12,2.5],['ex12',3,10,15,1],['ex13',3,8,12,1],['ex14',2,10,15,1]]},
+{id:'legs',name:'LEGS',type:'PPL',color:'green',exercises:[['ex15',4,8,12,5],['ex16',3,10,15,2.5],['ex17',3,8,12,2.5],['ex18',3,10,15,2.5],['ex19',3,8,12,2.5],['ex20',4,10,15,2.5]]},
+{id:'focus1',name:'CHEST + SHOULDERS',type:'FOCUS',color:'purple',exercises:[['ex1',3,8,12,2.5],['ex3',2,10,15,1.25],['ex4',3,8,12,2.5],['ex5',4,10,15,1],['ex13',2,8,12,1]]},
+{id:'focus2',name:'CHEST + BICEPS',type:'FOCUS',color:'purple',exercises:[['ex1',3,8,12,2.5],['ex3',3,10,15,1.25],['ex13',3,8,12,1],['ex14',2,10,15,1]]},
+{id:'focus3',name:'SHOULDERS + BICEPS',type:'FOCUS',color:'purple',exercises:[['ex4',3,8,12,2.5],['ex5',4,10,15,1],['ex12',2,10,15,1],['ex13',3,8,12,1],['ex14',2,10,15,1]]},
+{id:'focus4',name:'CHEST + SHOULDERS + BICEPS',type:'FOCUS',color:'purple',exercises:[['ex1',3,8,12,2.5],['ex3',2,10,15,1.25],['ex5',3,10,15,1],['ex13',3,8,12,1]]},
+{id:'focus5',name:'ARMS',type:'FOCUS',color:'purple',exercises:[['ex13',3,8,12,1],['ex14',3,10,15,1],['ex6',3,8,15,1.25],['ex7',3,10,15,1.25]]}
+];
+const DEFAULT_SETTINGS={id:'main',priorities:{Petto:'Alta','Deltoide anteriore':'Alta','Deltoide laterale':'Alta','Bicipiti':'Alta',Schiena:'Normale',Dorsali:'Normale',Tricipiti:'Normale',Quadricipiti:'Normale',Femorali:'Normale',Glutei:'Normale',Polpacci:'Normale','Deltoide posteriore':'Normale',Addome:'Normale'},defaultRir:'',weekStart:1,kgStep:2.5,smallKgStep:1};
